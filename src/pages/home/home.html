@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>MilkCow</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="goToAdd()">
+        Nova
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list *ngIf="measurements.length > 0">
+    <ion-list-header>
+      ÚTLIMAS MEDIÇÕES
+    </ion-list-header>
+    <ion-item *ngFor="let measurement of measurements" >
+      <h2>Média: {{measurement.result}}%</h2>
+      <h3>{{measurement.date}}</h3>
+      <ion-badge item-right>{{measurement.status}}</ion-badge>
+    </ion-item>
+  </ion-list>
+  <div class="img-container" *ngIf="measurements.length <= 0" padding>
+    <img src="assets/cow.png" alt="">
+    <p>Nenhuma medição realizada.</p>
+  </div>
+</ion-content>

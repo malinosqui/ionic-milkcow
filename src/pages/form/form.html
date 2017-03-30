@@ -1,0 +1,49 @@
+<!--
+  Generated template for the Form page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>MilkCow</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="calculate()">
+        Calcular
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="measurementForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Vacas em lactação</ion-label>
+        <ion-input type="tel" formControlName="cows" [class.invalid]="!measurementForm.controls.cows.valid && (measurementForm.controls.cows.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Vacas secas</ion-label>
+        <ion-input type="tel" formControlName="dryCows" [class.invalid]="!measurementForm.controls.dryCows.valid && (measurementForm.controls.dryCows.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Área usada para produção de leite</ion-label>
+        <ion-input type="tel" formControlName="area" [class.invalid]="!measurementForm.controls.area.valid && (measurementForm.controls.area.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Leite produzido por dia</ion-label>
+        <ion-input type="tel" formControlName="milkAmount" [class.invalid]="!measurementForm.controls.milkAmount.valid && (measurementForm.controls.milkAmount.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Preço do leite</ion-label>
+        <ion-input type="tel" formControlName="milkPrice" [class.invalid]="!measurementForm.controls.milkPrice.valid && (measurementForm.controls.milkPrice.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Número de funcionários</ion-label>
+        <ion-input type="tel" formControlName="employees" [class.invalid]="!measurementForm.controls.employees.valid && (measurementForm.controls.employees.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

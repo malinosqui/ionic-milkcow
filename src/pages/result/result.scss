@@ -1,0 +1,24 @@
+page-result {
+  .container {
+    background-color: #F25292;
+    color: #fff;
+    height: 30vh;
+    text-align: center;
+    p.label {
+      font-size: 2rem;
+      margin: 0px;
+      padding: 0px;
+      padding-top: 8vh;
+      text-transform: uppercase;
+    }
+    p.result {
+      font-size: 4rem;
+      margin: 0px;
+      font-weight: 700;
+    }
+  }
+  p.tip-text {
+    font-size: 1.65rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,29 @@
+<!--
+  Generated template for the Result page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Resultado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="container">
+    <p class="label">Sua média foi</p>
+    <p class="result">
+      {{measurement.result}}%
+    </p>
+  </div>
+  <div padding>
+    <p class="tip-text" [innerHTML]="resultText"></p>
+  </div>
+  <div padding>
+    <button ion-button block color="primary" (click)="back()">Voltar</button>
+  </div>
+</ion-content>
