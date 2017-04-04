@@ -17,12 +17,34 @@
   <div class="container">
     <p class="label">Sua média foi</p>
     <p class="result">
-      {{measurement.result}}%
+      {{measurement.goodCowsPercentage}}%
     </p>
   </div>
-  <div padding>
-    <p class="tip-text" [innerHTML]="resultText"></p>
-  </div>
+  <ion-list>
+    <ion-list-header>
+      Indicadores
+    </ion-list-header>
+    <ion-item>
+      <ion-label stacked>Vacas em lactação/total de vacas (%)</ion-label>
+      <ion-input [(ngModel)]="measurement.goodCowsPercentage" disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Vacas em lactação/área</ion-label>
+      <ion-input [(ngModel)]="measurement.goodCowsArea" disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Leite produzido no ano/área (L)</ion-label>
+      <ion-input [(ngModel)]="measurement.milkYearArea" disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Litros de leite/funcionário</ion-label>
+      <ion-input [(ngModel)]="measurement.milkEmployee" disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Receita do leite</ion-label>
+      <ion-input [(ngModel)]="measurement.milkRevenue" disabled></ion-input>
+    </ion-item>
+  </ion-list>
   <div padding>
     <button ion-button block color="primary" (click)="back()">Voltar</button>
   </div>

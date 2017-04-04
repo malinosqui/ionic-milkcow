@@ -14,10 +14,12 @@
     <ion-list-header>
       ÚTLIMAS MEDIÇÕES
     </ion-list-header>
-    <ion-item *ngFor="let measurement of measurements" >
-      <h2>Média: {{measurement.result}}%</h2>
+    <ion-item *ngFor="let measurement of measurements">
+      <h2>Média: {{measurement.goodCowsPercentage}}%</h2>
       <h3>{{measurement.date}}</h3>
-      <ion-badge item-right>{{measurement.status}}</ion-badge>
+      <ion-badge item-right *ngIf="measurement.status == 'Ideal'" color="success">{{measurement.status}}</ion-badge>
+      <ion-badge item-right *ngIf="measurement.status == 'Regular'" color="warning">{{measurement.status}}</ion-badge>
+      <ion-badge item-right *ngIf="measurement.status == 'Ruim'" color="danger">{{measurement.status}}</ion-badge>
     </ion-item>
   </ion-list>
   <div class="img-container" *ngIf="measurements.length <= 0" padding>

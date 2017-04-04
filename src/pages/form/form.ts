@@ -28,8 +28,8 @@ export class FormPage {
       dryCows: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('[0-9]*'), Validators.required])],
       area: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('[0-9]*'), Validators.required])],
       milkAmount: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('[0-9]*'), Validators.required])],
-      milkPrice: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('[0-9]*'), Validators.required])],
-      employees: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('[0-9]*'), Validators.required])],
+      milkPrice: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('[0-9]+(\.[0-9][0-9]?)*'), Validators.required])],
+      employees: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('[0-9]+(\.[0-9][0-9]?)*'), Validators.required])],
     });
 
   }

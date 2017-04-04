@@ -18,9 +18,26 @@ export class MeasurementProvider {
   }
 
   calculate(measurement) {
-    measurement.result = '80';
-    measurement.status = 'Regular';
+    measurement.goodCowsPercentage = (+measurement.cows / (+measurement.dryCows + +measurement.cows) * 100).toFixed(2);
+    measurement.goodCowsArea = (+measurement.cows / +measurement.area).toFixed(1);
+    measurement.milkYearArea = ((+measurement.milkAmount * 365) / +measurement.area).toFixed(1);
+    measurement.milkEmployee = (+measurement.milkAmount / +measurement.employees).toFixed(1);
+    measurement.milkRevenue = ((+measurement.milkAmount * 365) * +measurement.milkPrice).toFixed(2);
+    measurement.status = this.getStatus(+measurement.goodCowsPercentage);
+
     return measurement;
+  }
+
+  getStatus(result) {
+    if (result < 60) {
+      return 'Ruim';
+    } else if (result >= 60 && result <= 69) {
+      return 'Regular';
+    } else if (result >= 70 && result <= 79) {
+      return 'Bom';
+    } else if (result >= 80) {
+      return 'Ideal';
+    }
   }
 
   getMeasurements(): any {

@@ -18,21 +18,6 @@ export class ResultPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public viewCtrl: ViewController) {
     this.measurement = navParams.get('measurement')
-
-    this.resultText = this.getResultText(this.measurement.status);
-  }
-
-  getResultText(status: String) {
-    switch (status.toLowerCase()) {
-      case 'ruim':
-        return 'Infelizmente sua medição está <b>ruim</b>, continue trabalhando.';
-      case 'regular':
-        return 'Sua média está <b>regular</b>, ainda está longe do ideal, continue trabalhando.';
-      case 'bom':
-        return 'Parabéns sua média está <b>boa</b>, continue trabalhando para chegar no ideal.';
-      case 'ideal':
-        return 'Meus parabéns você teve um resultado <b>ideal</b>, mantenha-se focado.';
-    }
   }
 
   back() {
